@@ -22,7 +22,7 @@ MAIN:
 - 1 lua script (64x256)  
 
 SOUND:  
-- 16 PCM samples  
+- 16 PCM samples + 8 SFX  
 - 1 sequence (8 patterns 64 lines each)  
 
 PPU:  
@@ -94,12 +94,12 @@ Game/app carts must have this structure:
 24 waveforms. Each waveform is an 8 bit PCM, and has 256 samples max.  
   
 Cartridges are 240KB:  
-scripts: 4*20 = 80KB  
-maps: 4*16 = 64KB  
-bkgs: 8*0.256 = 2KB  
-tilesets: 4*16 = 64KB  
-seqs: 4*6 = 24KB  
-sam: 24*0.256 = 6KB  
+scripts: 4x20 = 80KB  
+maps: 4x16 = 64KB  
+bkgs: 8x0.256 = 2KB  
+tilesets: 4x16 = 64KB  
+seqs: 4x6 = 24KB  
+sam: 24x0.256 = 6KB  
    
 script_0.lua    
 script_1.lua  
@@ -128,7 +128,7 @@ sam_23.wav
   
   
 ## 7 HADR DISK
-The computer has an internal 256KB storage with the same structure as the external cart.Here you can create your app and the save it to the external cart.
+The computer has an internal 256KB storage with the same structure as the external cart, but empty. Here you can create your app and them save it to the external cart.
   
   
 ## GET STARTED
