@@ -12,9 +12,7 @@ I just wanted to create my personal PICO-8 with much more realistic "1985's pc h
 
 
 ## 1 CPU
-It is something like a hardware lua interpreter
-This CPU can run around 512 lua instructions per frame (loop) and it is fixed at 60 fps
-It can handle int and float variables, and includes math instructions like multiply, divide...
+It is something like a hardware lua interpreter. This CPU can run around 512 lua instructions per frame (loop) and it is fixed at 60 fps. It can handle int and float variables, and includes math instructions like multiply, divide...
 
 
 ## 2 RAM
@@ -79,7 +77,8 @@ Only one palette can be used per frame.
 The sound processing unit has 3 melodic chanels and one sfx chanel. 
 - Melodic chanels: SPU can use 16 waveforms for music in these chanels. It can only modify volume and pitch.  
 - SFX chanel: SPU can access other 8 waveforms to play them in this chanel. It can only modify volume and pitch.  
-Each sample must be an 8 bit PCM with 256 samples each. There are generic samples preloaded, but you can create new ones and share them using plutonium disks.  
+  
+Each sample must be an 8 bit PCM with 256 samples. There are generic samples preloaded, but you can create new ones and share them using plutonium disks.  
   
   
 ## 6 MEDIA
@@ -93,13 +92,14 @@ Game/app carts must have this structure:
 4 Music sequences, in binary format. Each sequence has 8 patterns, 64 lines each.  
 24 waveforms. Each waveform is an 8 bit PCM, and has 256 samples max.  
   
-Cartridges are 240KB:  
+Cartridges are 256KB:  
+header: 12 KB empty  
 scripts: 4x20 = 80KB  
 maps: 4x16 = 64KB  
 bkgs: 8x0.256 = 2KB  
 tilesets: 4x16 = 64KB  
 seqs: 4x6 = 24KB  
-sam: 24x0.256 = 6KB  
+sam: 32x0.299 = 6KB  
    
 script_0.lua    
 ..  
@@ -118,10 +118,10 @@ seq_0
 seq_3  
 sam_0.wav   
 ...  
-sam_23.wav  
+sam_31.wav  
   
   
-## 7 HADR DISK
+## 7 HARD DISK
 The computer has an internal 256KB storage with the same structure as the external cart, but empty. Here you can create your app and them save it to the external cart.
   
   
