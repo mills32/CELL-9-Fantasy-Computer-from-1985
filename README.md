@@ -20,15 +20,15 @@ It can handle int and float variables, and includes math instructions like multi
 ## 2 RAM
 MAIN:   
 - 1 lua script (64x256)   
-SOUND:   
+SOUND:  
 - 16 PCM samples  
-- 1 sequence (8 patterns 64 lines each)   
+- 1 sequence (8 patterns 64 lines each)  
 PPU:  
-- 1 MAP (128x128)   
-- 1 BKG + 1 WINDOW (16x16)   
-- 256 tiles (5 or 17 colours)   
-	
-
+- 1 MAP (128x128)  
+- 1 BKG + 1 WINDOW (16x16)  
+- 256 tiles (5 or 17 colours)  	
+  
+  
 ## 3 INTERNAL ROM
 Contains the editors.
 It also stores two 256 character fonts: 
@@ -49,16 +49,16 @@ In this mode, PPU can access 3 planes composed of tiles or cells, and 32 sprites
 Tiles are 8x8 pixels, but sprites can use 1 cell (8x8 pixels) or 4 cells (16x16 pixels).
 PPU has access to 256 editable tiles, shared between planes and sprites.	
 - Plane 0:  
-it has 16x16 cells, can be scrolled, and it wraps at the borders.
+It is a 16x16 cell Map, can be scrolled, and it wraps at the borders.
 Scroll registers can be modified per scanline. This plane is always behind the others, and
 due to it's small size, it can only be used for simple backgrounds.
 - Plane 1:  
-it has 128x128 cells, can be scrolled, but it does not wrap at the borders.
+It is a 128x128 cell map, can be scrolled, but it does not wrap at the borders.
 This plane is always on top of plane 0. Map tiles have a priority flag that can be set to be 
 on top of the sprites. Scroll registers can't be modified per scanline. This plane is where 
 you can store big maps for the game. 
 - Plane 2:  
-it has 16x16 cells and it can be scrolled only from -128 to 128 (x,y). This plane does not 
+It is a 16x16 cell map and it can be scrolled only from -128 to 128 (x,y). This plane does not 
 wrap at the borders, and it's main use is a static window to display info. CELL-9 can use the 8x8 font 
 stored in ROM to print on this plane. Plane 2 is always on top of planes 0, 1 and the sprites.  
 - Sprites:  
@@ -68,11 +68,9 @@ PPU can use the main cpu math to rotate sprites.
   
 #### PPU COLORS
 There were two CELL-9 models:
-##### Model A (1985):  
-2 fixed palettes CGA1/CGA2 with 4 colors each + 1 transparent.
+- Model A (1985): 2 fixed palettes CGA1/CGA2 with 4 colors each + 1 transparent.
 Only one palette can be used per frame.
-##### Model B (1986):  
-16 fixed colours (PICO-8) + 1 transparent. It can be set to be compatible with model A.  
+- Model B (1986): 16 fixed colours (PICO-8) + 1 transparent. It can be set to be compatible with model A.  
   
   
 ## 5 SPU
