@@ -105,29 +105,53 @@ pcm: 4KB
 
 header
 script_0.lua	4 lua scripts, each with 64x256 characters max. script_0 will be run first.
+
 script_1.lua
+
 script_2.lua
+
 script_3.lua
+
 map_0			4 128x128 maps, in binary format. First tile is 0.
+
 map_1
+
 map_2
+
 map_3
+
 bkg_0			4 16x16 backgrounds, in binary format. First tile is 0.
+
 bkg_1
+
 bkg_2
+
 bkg_3
+
 tset_0.png		4 tilesets (tileset_0.png - 3). 16 colors / 256 tiles. Each tile is an 8x8 pixels square.
+
 tset_1.png
+
 tset_2.png
+
 tset_3.png
+
 seq_0			4 Music sequences, in binary format. Each sequence has 8 patterns, 64 lines each.
+
 seq_1
+
 seq_2
+
 seq_3
+
 sam_0.wav		16 8 bit PCM waveforms. Each waveform has 256 samples max.
+
 sam_1.wav
+
 .
+
 sam_15.wav
+
 
 
 GET STARTED
