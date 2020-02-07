@@ -84,20 +84,23 @@ There are generic samples preloaded, but you can create new ones and share them 
   
 ## 6 MEDIA
 Plutonium rewritable carts for general storage.  
-Game/app carts must have this structure:  
+Game/app carts must have this structure: 
   
-header: 5KB  
-scripts: 4x20 = 80KB.....4 lua scripts, each with 64x256 characters max. script_0 will be run first.  
-maps: 4x16 = 64KB.......4 128x128 maps, in binary format. First tile is 0.  
-bkgs: 4x0.256 = 1KB.....4 16x16 backgrounds, in binary format. First tile is 0.  
-tilesets: 3x4 = 12KB....4 tilesets. 17 colors / 256 tiles. Each tile is an 8x8 pixels square.  
-seqs: 4x4608 = 18KB.....4 Music sequences, in binary format. Each sequence has 8 patterns, 64 lines each.  
-pcm: 4KB....................16 8 bit PCM waveforms. Each waveform has 256 samples max.  
+4 lua scripts: each with 64x256 characters max. script_0 will be run first.  
+4 128x128 maps: in binary format. First tile is 0.  
+4 16x16 backgrounds: in binary format. First tile is 0.  
+4 tilesets: 17 colors / 256 tiles. Uncompressed PNG.  
+4 Music sequences, in binary format. Each sequence has 8 patterns, 64 lines each.  
+24 waveforms. Each waveform is an 8 bit PCM, and has 256 samples max.  
   
-TOTAL 180 KB   
-  
-  
-header  
+Cartridges are 240KB:  
+scripts: 4*20 = 80KB  
+maps: 4*16 = 64KB  
+bkgs: 8*0.256 = 2KB  
+tilesets: 4*16 = 64KB  
+seqs: 4*6 = 24KB  
+sam: 24*0.256 = 6KB  
+   
 script_0.lua    
 script_1.lua  
 script_2.lua  
@@ -121,7 +124,7 @@ seq_3
 sam_0.wav  		
 sam_1.wav  
 ...  
-sam_15.wav  
+sam_23.wav  
 
 
 ## GET STARTED
