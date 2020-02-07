@@ -19,14 +19,14 @@ It can handle int and float variables, and includes math instructions like multi
 
 ## 2 RAM
 MAIN:   
-- 1 lua script (64x256)  
+- 1 lua script (64x256)   
 SOUND:   
 - 16 PCM samples  
-- 1 sequence (8 patterns 64 lines each)  
+- 1 sequence (8 patterns 64 lines each)   
 PPU:  
-- 1 MAP (128x128)  
-- 1 BKG + 1 WINDOW (16x16)  
-- 256 tiles (5 or 17 colours)  
+- 1 MAP (128x128)   
+- 1 BKG + 1 WINDOW (16x16)   
+- 256 tiles (5 or 17 colours)   
 	
 
 ## 3 INTERNAL ROM
@@ -60,29 +60,28 @@ you can store big maps for the game.
 - Plane 2:  
 it has 16x16 cells and it can be scrolled only from -128 to 128 (x,y). This plane does not 
 wrap at the borders, and it's main use is a static window to display info. CELL-9 can use the 8x8 font 
-stored in ROM to print on this plane.
-Plane 2 is always on top of planes 0, 1 and the sprites.
-     ##### Sprites:  
+stored in ROM to print on this plane. Plane 2 is always on top of planes 0, 1 and the sprites.  
+- Sprites:  
 PPU has 32 sprites (8x8 and 16x16 pixels). They are ussualy on top of plane 1. If tiles 
 from plane 1 have the priority flag set to 1, sprites will be below these tiles.
-PPU can use the main cpu math to rotate sprites.
-
+PPU can use the main cpu math to rotate sprites.  
+  
 #### PPU COLORS
 There were two CELL-9 models:
 ##### Model A (1985):  
 2 fixed palettes CGA1/CGA2 with 4 colors each + 1 transparent.
 Only one palette can be used per frame.
 ##### Model B (1986):  
-16 fixed colours (PICO-8) + 1 transparent. It can be set to be compatible with model A.
-
-
+16 fixed colours (PICO-8) + 1 transparent. It can be set to be compatible with model A.  
+  
+  
 ## 5 SPU
 The sound processing unit has 3 melodic chanels and one sfx chanel. It can only modify volume and pitch.
 There are 4Kb for 16 melodic samples and 2Kb for 8 SFX sounds. 
 Each sample must be an 8 bit PCM with 256 samples each.  
-There are generic samples preloaded, but you can create new ones and share them using plutonium disks.
-
-
+There are generic samples preloaded, but you can create new ones and share them using plutonium disks.  
+  
+  
 ## 6 MEDIA
 Plutonium rewritable carts for general storage.  
 Game/app carts must have this structure:  
