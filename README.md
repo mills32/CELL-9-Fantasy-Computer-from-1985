@@ -19,45 +19,45 @@ It can handle int and float variables, and includes math instructions like multi
 
 ## 2 RAM
 MAIN:   
-     1 lua script (64x256)  
+- 1 lua script (64x256)  
 SOUND:   
-     16 PCM samples  
-     1 sequence (8 patterns 64 lines each)  
+- 16 PCM samples  
+- 1 sequence (8 patterns 64 lines each)  
 PPU:  
-     1 MAP (128x128)  
-     1 BKG + 1 WINDOW (16x16)  
-     256 tiles (5 or 17 colours)  
+- 1 MAP (128x128)  
+- 1 BKG + 1 WINDOW (16x16)  
+- 256 tiles (5 or 17 colours)  
 	
 
 ## 3 INTERNAL ROM
 Contains the editors.
 It also stores two 256 character fonts: 
-     4x6 font for text and music editors.
-     8x8 font for in-game text printable only in the window plane.
+- 4x6 font for text and music editors.
+- 8x8 font for in-game text printable only in the window plane.
 
 
 ## 4 PPU
 The CELL 9 has a 128x128 pixels screen and has two modes.
-#### -PPU MODE 0
+#### PPU MODE 0
 This mode can only display text and the fixed editor programs (stored in a rom chip).
 Text is displayed on a plane containing 32x20 cells, and editors are generated on top of the 
 text mode, by the rom program using a 128x128 framebuffer, (which is not accesible for anything 
 else). Only two hardware sprites are available for the cursor and the mouse.
-#### -PPU MODE 1
+#### PPU MODE 1
 This mode provides all the necesary for the interactive apps and games.
 In this mode, PPU can access 3 planes composed of tiles or cells, and 32 sprites.
 Tiles are 8x8 pixels, but sprites can use 1 cell (8x8 pixels) or 4 cells (16x16 pixels).
 PPU has access to 256 editable tiles, shared between planes and sprites.	
-     ##### Plane 0:  
+- Plane 0:  
 it has 16x16 cells, can be scrolled, and it wraps at the borders.
 Scroll registers can be modified per scanline. This plane is always behind the others, and
 due to it's small size, it can only be used for simple backgrounds.
-     ##### Plane 1:  
+- Plane 1:  
 it has 128x128 cells, can be scrolled, but it does not wrap at the borders.
 This plane is always on top of plane 0. Map tiles have a priority flag that can be set to be 
 on top of the sprites. Scroll registers can't be modified per scanline. This plane is where 
 you can store big maps for the game. 
-     ##### Plane 2:  
+- Plane 2:  
 it has 16x16 cells and it can be scrolled only from -128 to 128 (x,y). This plane does not 
 wrap at the borders, and it's main use is a static window to display info. CELL-9 can use the 8x8 font 
 stored in ROM to print on this plane.
@@ -67,7 +67,7 @@ PPU has 32 sprites (8x8 and 16x16 pixels). They are ussualy on top of plane 1. I
 from plane 1 have the priority flag set to 1, sprites will be below these tiles.
 PPU can use the main cpu math to rotate sprites.
 
-#### -PPU COLORS
+#### PPU COLORS
 There were two CELL-9 models:
 ##### Model A (1985):  
 2 fixed palettes CGA1/CGA2 with 4 colors each + 1 transparent.
