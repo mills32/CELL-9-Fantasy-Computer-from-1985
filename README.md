@@ -1,8 +1,6 @@
 # CELL-9-Fantasy-Computer-from-1985
  
-FANTASY COMPUTER CELL-9 
-PUBLIC INTERACTIVE COMPUTER SYSTEM
-----------------------------------
+# FANTASY COMPUTER CELL-9 PUBLIC INTERACTIVE COMPUTER SYSTEM
 
 This is a weird fantasy hardware, maybe it is the computer I'd have loved as a kid.
 Imagine some planet in which they reached something like 1985, and people decided to 
@@ -13,14 +11,12 @@ Of course nearly all credits go to the creators of other fantasy computers like 
 I just wanted to create my personal PICO-8 with much more realistic "1985's pc hardware".
 
 
-CPU
----
+## CPU
 It is something like a hardware lua interpreter
 This CPU can run around 512 lua instructions per frame (loop) and it is fixed at 60 fps
 It can handle int and float variables, and includes math instructions like multiply, divide...
 
-RAM
----
+## RAM
 MAIN	1 lua script (64x256)
 SOUND	16 PCM samples
 		1 sequence (8 patterns 64 lines each)
@@ -29,16 +25,14 @@ PPU:	1 MAP (128x128)
 		256 tiles (5 or 17 colours)
 	
 
-INTERNAL ROM
-------------
+## INTERNAL ROM
 Contains the editors.
 It also stores two 256 character fonts: 
 	4x6 font for text and music editors.
 	8x8 font for in-game text printable only in the window plane.
 
 
-PPU
----
+## PPU
 The CELL 9 has a 128x128 pixels screen and has two modes.
 
 MODE 0
@@ -79,28 +73,26 @@ Only one palette can be used per frame.
 
 -Model B (1986): 16 fixed colours (PICO-8) + 1 transparent. It can be set to be compatible with model A.
 
-SPU
----
+## SPU
 The sound processing unit has 3 melodic chanels and one sfx chanel. It can only modify volume and pitch.
 There are 4Kb for 16 melodic samples and 2Kb for 8 SFX sounds. 
 Each sample must be an 8 bit PCM with 256 samples each.  
 There are generic samples preloaded, but you can create new ones and share them using plutonium disks.
 
 
-MEDIA
------
+## MEDIA
 Plutonium rewritable carts for general storage.
 Game/app carts must have this structure:
 
 header: 5KB  
-scripts: 4*20 = 80KB     4 lua scripts, each with 64x256 characters max. script_0 will be run first.  
-maps: 4*16 = 64KB        4 128x128 maps, in binary format. First tile is 0.  
-bkgs: 4*0.256 = 1KB      4 16x16 backgrounds, in binary format. First tile is 0.  
-tilesets: 3*4 = 12KB     4 tilesets. 17 colors / 256 tiles. Each tile is an 8x8 pixels square.  
-seqs: 4*4608 = 18KB      4 Music sequences, in binary format. Each sequence has 8 patterns, 64 lines each.  
-pcm: 4KB                 16 8 bit PCM waveforms. Each waveform has 256 samples max.  
+scripts: 4x20 = 80KB	4 lua scripts, each with 64x256 characters max. script_0 will be run first.  
+maps: 4x16 = 64KB	4 128x128 maps, in binary format. First tile is 0.  
+bkgs: 4x0.256 = 1KB	4 16x16 backgrounds, in binary format. First tile is 0.  
+tilesets: 3x4 = 12KB	4 tilesets. 17 colors / 256 tiles. Each tile is an 8x8 pixels square.  
+seqs: 4x4608 = 18KB	4 Music sequences, in binary format. Each sequence has 8 patterns, 64 lines each.  
+pcm: 4KB		16 8 bit PCM waveforms. Each waveform has 256 samples max.  
 
-180 KB   
+TOTAL 180 KB   
 
 
 header  
@@ -110,28 +102,26 @@ script_2.lua
 script_3.lua  
 map_0  
 map_1  
-map_2.
-map_3.
-bkg_0.		
-bkg_1.
-bkg_2.
-bkg_3.
-tset_0.png.		
-tset_1.png.
-tset_2.png.
-tset_3.png.
-seq_0.
-seq_1.
-seq_2.
-seq_3.
-sam_0.wav.		
-sam_1.wav.
-...
-sam_15.wav.
+map_2  
+map_3  
+bkg_0  		
+bkg_1  
+bkg_2  
+bkg_3  
+tset_0.png  		
+tset_1.png  
+tset_2.png  
+tset_3.png  
+seq_0  
+seq_1  
+seq_2  
+seq_3  
+sam_0.wav  		
+sam_1.wav  
+...  
+sam_15.wav  
 
 
-GET STARTED
-------------
-
+## GET STARTED
 still nothing
 
