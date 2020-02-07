@@ -1,6 +1,6 @@
 # CELL-9-Fantasy-Computer-from-1985
  
-# FANTASY COMPUTER CELL-9 PUBLIC INTERACTIVE COMPUTER SYSTEM
+## FANTASY COMPUTER CELL-9 PUBLIC INTERACTIVE COMPUTER SYSTEM
 
 This is a weird fantasy hardware, maybe it is the computer I'd have loved as a kid.
 Imagine some planet in which they reached something like 1985, and people decided to 
@@ -17,12 +17,12 @@ This CPU can run around 512 lua instructions per frame (loop) and it is fixed at
 It can handle int and float variables, and includes math instructions like multiply, divide...
 
 ## RAM
-### MAIN
+###MAIN
 1 lua script (64x256)
-### SOUND
+###SOUND
 16 PCM samples
 1 sequence (8 patterns 64 lines each)
-### PPU
+###PPU
 1 MAP (128x128)
 1 BKG + 1 WINDOW (16x16)
 256 tiles (5 or 17 colours)
