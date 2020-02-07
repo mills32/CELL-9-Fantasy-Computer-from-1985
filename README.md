@@ -76,10 +76,10 @@ Only one palette can be used per frame.
   
   
 ## 5 SPU
-The sound processing unit has 3 melodic chanels and one sfx chanel. It can only modify volume and pitch.
-There are 4Kb for 16 melodic samples and 2Kb for 8 SFX sounds. 
-Each sample must be an 8 bit PCM with 256 samples each.  
-There are generic samples preloaded, but you can create new ones and share them using plutonium disks.  
+The sound processing unit has 3 melodic chanels and one sfx chanel. 
+- Melodic chanels: SPU can use 16 waveforms for music in these chanels. It can only modify volume and pitch.  
+- SFX chanel: SPU can access other 8 waveforms to play them in this chanel. It can only modify volume and pitch.  
+Each sample must be an 8 bit PCM with 256 samples each. There are generic samples preloaded, but you can create new ones and share them using plutonium disks.  
   
   
 ## 6 MEDIA
