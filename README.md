@@ -102,27 +102,21 @@ seqs: 4x6 = 24KB
 sam: 24x0.256 = 6KB  
    
 script_0.lua    
-script_1.lua  
-script_2.lua  
+..  
 script_3.lua  
 map_0  
-map_1  
-map_2  
+..   
 map_3  
 bkg_0  
-bkg_1  
-bkg_2  
-bkg_3  
+..  
+bkg_8  
 tset_0.png  
-tset_1.png  
-tset_2.png  
+..  
 tset_3.png  
 seq_0  
-seq_1  
-seq_2  
+..    
 seq_3  
-sam_0.wav  
-sam_1.wav  
+sam_0.wav   
 ...  
 sam_23.wav  
   
