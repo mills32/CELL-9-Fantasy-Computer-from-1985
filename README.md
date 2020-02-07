@@ -121,12 +121,16 @@ seq_0
 seq_1  
 seq_2  
 seq_3  
-sam_0.wav  		
+sam_0.wav  
 sam_1.wav  
 ...  
 sam_23.wav  
-
-
+  
+  
+## 7 HADR DISK
+The computer has an internal 256KB storage with the same structure as the external cart.Here you can create your app and the save it to the external cart.
+  
+  
 ## GET STARTED
 still nothing
 
