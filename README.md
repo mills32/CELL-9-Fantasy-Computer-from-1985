@@ -92,24 +92,24 @@ MEDIA
 Plutonium rewritable carts for general storage.
 Game/app carts must have this structure:
 
-header: 5KB
-scripts: 4*20 = 80KB     4 lua scripts, each with 64x256 characters max. script_0 will be run first.
-maps: 4*16 = 64KB        4 128x128 maps, in binary format. First tile is 0.
-bkgs: 4*0.256 = 1KB      4 16x16 backgrounds, in binary format. First tile is 0.
-tilesets: 3*4 = 12KB     4 tilesets. 17 colors / 256 tiles. Each tile is an 8x8 pixels square.
-seqs: 4*4608 = 18KB      4 Music sequences, in binary format. Each sequence has 8 patterns, 64 lines each.
-pcm: 4KB                 16 8 bit PCM waveforms. Each waveform has 256 samples max.
+header: 5KB  
+scripts: 4*20 = 80KB     4 lua scripts, each with 64x256 characters max. script_0 will be run first.  
+maps: 4*16 = 64KB        4 128x128 maps, in binary format. First tile is 0.  
+bkgs: 4*0.256 = 1KB      4 16x16 backgrounds, in binary format. First tile is 0.  
+tilesets: 3*4 = 12KB     4 tilesets. 17 colors / 256 tiles. Each tile is an 8x8 pixels square.  
+seqs: 4*4608 = 18KB      4 Music sequences, in binary format. Each sequence has 8 patterns, 64 lines each.  
+pcm: 4KB                 16 8 bit PCM waveforms. Each waveform has 256 samples max.  
 
-180 KB
+180 KB   
 
 
-header.
-script_0.lua.  
-script_1.lua.
-script_2.lua.
-script_3.lua.
-map_0.
-map_1.
+header  
+script_0.lua    
+script_1.lua  
+script_2.lua  
+script_3.lua  
+map_0  
+map_1  
 map_2.
 map_3.
 bkg_0.		
