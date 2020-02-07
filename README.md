@@ -19,7 +19,7 @@ It can handle int and float variables, and includes math instructions like multi
 
 ## 2 RAM
 MAIN:   
-- 1 lua script (64x256)   
+- 1 lua script (64x256)  
 SOUND:  
 - 16 PCM samples  
 - 1 sequence (8 patterns 64 lines each)  
