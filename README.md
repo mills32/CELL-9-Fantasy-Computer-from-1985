@@ -4,11 +4,10 @@
 
 This is a weird fantasy hardware, maybe it is the computer I'd have loved as a kid.
 Imagine some planet in which they reached something like 1985, and people decided to 
-distribute a free little pc (something like an Amiga) with a very simplified hardware and 
-software, made just for creating interactive apps, like games.
+distribute a free little pc. his is something like an Amiga, but more like a toy for everyone tostart programming with a very simplified hardware and software.
 
 Of course nearly all credits go to the creators of other fantasy computers like PICO-8.
-I just wanted to create my personal PICO-8 with much more realistic "1985's pc hardware".
+I just wanted to create my personal PICO-8 with much more "realistic" "1985's console hardware".
 
 
 ## 1 CPU
@@ -16,11 +15,9 @@ It is something like a hardware lua interpreter. This CPU can run around 512 lua
 
 
 ## 2 RAM
-MAIN:   
-- 1 lua script (64x256)  
+Main RAM consists in 4 lua scripts (64x256) which are loaded from disk at start.  
 
-SOUND:  
-- 16 PCM samples + 8 SFX  
+SOUND:
 - 1 sequence (8 patterns 64 lines each)  
 
 PPU:  
@@ -29,11 +26,11 @@ PPU:
 - 256 tiles (5 or 17 colours)  	
   
   
-## 3 INTERNAL ROM
-Contains the editors.
+## 3 INTERNAL MEDIA
+Contains the editors, Sounds etc...
 It also stores two 256 character fonts: 
 - 4x6 font for text and music editors.
-- 8x8 font for in-game text printable only in the window plane.
+- 8x8 font for in-game text.
 
 
 ## 4 PPU
@@ -41,7 +38,7 @@ The CELL 9 has a 128x128 pixels screen and has two modes.
 #### PPU MODE 0
 This mode can only display text and the fixed editor programs (stored in a rom chip).
 Text is displayed on a plane containing 32x20 cells, and editors are generated on top of the 
-text mode, by the rom program using a 128x128 framebuffer, (which is not accesible for anything 
+text mode by the rom program using a 128x128 framebuffer, (which is not accesible for anything 
 else). Only two hardware sprites are available for the cursor and the mouse.
 #### PPU MODE 1
 This mode provides all the necesary for the interactive apps and games.
@@ -75,54 +72,28 @@ Only one palette can be used per frame.
   
 ## 5 SPU
 The sound processing unit has 3 melodic chanels and one sfx chanel. 
-- Melodic chanels: SPU can use 16 waveforms for music in these chanels. It can only modify volume and pitch.  
-- SFX chanel: SPU can access other 8 waveforms to play them in this chanel. It can only modify volume and pitch.  
+- Melodic chanels: SPU can use 32 waveforms for music in these chanels. It can only modify volume and pitch.  
+- SFX chanel: SPU can play any of the 32 waveforms in this chanel. It can only modify volume and pitch.  
   
-Each sample must be an 8 bit PCM with 256 samples. There are generic samples preloaded, but you can create new ones and share them using plutonium disks.  
+I generated the sounds using tiny 8 bit waves (256 samples each) and adding some loop fade effects. I hope creating music this way is musch more simple than with PICO-8 and other fantasy computers.
   
   
 ## 6 MEDIA
-Plutonium rewritable carts for general storage.  
+Plutonium rewritable magnetic disks for general storage.  
 Game/app carts must have this structure: 
   
-4 lua scripts: each with 64x256 characters max. script_0 will be run first.  
+4 lua scripts: each with 64x256 characters max.  
 4 128x128 maps: in binary format. First tile is 0.  
 4 16x16 backgrounds: in binary format. First tile is 0.  
 4 tilesets: 17 colors / 256 tiles. Uncompressed PNG.  
 4 Music sequences, in binary format. Each sequence has 8 patterns, 64 lines each.  
-24 waveforms. Each waveform is an 8 bit PCM, and has 256 samples max.  
-  
-Cartridges are 256KB:  
-header: 12 KB empty  
-scripts: 4x20 = 80KB  
-maps: 4x16 = 64KB  
-bkgs: 8x0.256 = 2KB  
-tilesets: 4x16 = 64KB  
-seqs: 4x6 = 24KB  
-sam: 32x0.299 = 6KB  
-   
-script_0.lua    
-..  
-script_3.lua  
-map_0  
-..   
-map_3  
-bkg_0  
-..  
-bkg_8  
-tset_0.png  
-..  
-tset_3.png  
-seq_0  
-..    
-seq_3  
-sam_0.wav   
-...  
-sam_31.wav  
-  
+
+A sample "uncompressed" disk is available, and also a little program to create disks from any PC.
+
   
 ## 7 HARD DISK
-The computer has an internal 256KB storage with the same structure as the external cart, but empty. Here you can create your app and them save it to the external cart.
+The computer has no internal storage, except for the RAM and ROM.
+With no disk inserted, you can access: 4 scripts, 1 tileset, 1 BKG, 1 Window, 1 MAP, 1 music sequence.
   
   
 ## GET STARTED
