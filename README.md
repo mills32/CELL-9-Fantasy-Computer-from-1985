@@ -4,10 +4,10 @@
 
 This is a weird fantasy hardware, maybe it is the computer I'd have loved as a kid.
 Imagine some planet in which they reached something like 1985, and people decided to 
-distribute a free little pc. his is something like an Amiga, but more like a toy for everyone tostart programming with a very simplified hardware and software.
+distribute a free little pc. It's something like an Amiga, but more like a toy for everyone to start programming with a very simplified hardware and software.
 
 Of course nearly all credits go to the creators of other fantasy computers like PICO-8.
-I just wanted to create my personal PICO-8 with much more "realistic" "1985's console hardware".
+I just wanted to create my personal PICO-8 with much more "realistic 1985's console hardware".
 
 
 ## 1 CPU
